@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class ClockView extends StatefulWidget {
@@ -21,7 +23,29 @@ class _ClockViewState extends State<ClockView> {
 class ClockPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
-    
+    var centerX = size.width / 2;
+    var centerY = size.height / 2;
+    var center = Offset(centerX, centerY);
+    var radius = min(centerX, centerY);
+
+    var fillBrush = Paint()
+    ..color = Color(0xFF444974);
+
+    var outlineBrush = Paint()
+    ..color = Color(0xFFEAECFF)
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 16;
+
+    var centerFillBrush = Paint()..color = Color(0xFFEAECFF);
+
+    var secHandBrush = Paint()
+    ..color = Color(0xFFEAECFF)
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 16;
+
+    canvas.drawCircle(center, radius - 40, fillBrush);
+    canvas.drawCircle(center, radius - 40, outlineBrush);
+    canvas.drawCircle(center, 16, centerFillBrush);
   }
 
   @override
