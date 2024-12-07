@@ -1,3 +1,4 @@
+
 import 'dart:async';
 import 'dart:math';
 
@@ -9,10 +10,10 @@ class ClockView extends StatefulWidget {
 }
 
 class _ClockViewState extends State<ClockView> {
-  @override
-  void initState() {
-    Timer.periodic(Duration(seconds: 1), (timer) {
-      setState(() {});
+  @override void initState() {
+    Timer.periodic(Duration(seconds: 1), (timer){
+      setState(() {
+      });
     });
     super.initState();
   }
@@ -44,12 +45,13 @@ class ClockPainter extends CustomPainter {
     var center = Offset(centerX, centerY);
     var radius = min(centerX, centerY);
 
-    var fillBrush = Paint()..color = Colors.blueGrey;
+    var fillBrush = Paint()
+    ..color = Colors.blueGrey;
 
     var outlineBrush = Paint()
-      ..color = Colors.white
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 16;
+    ..color = Colors.white
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 16;
 
     var centerFillBrush = Paint()..color = Colors.white;
 
@@ -73,28 +75,28 @@ class ClockPainter extends CustomPainter {
       ..strokeCap = StrokeCap.round
       ..strokeWidth = 16;
 
+
     canvas.drawCircle(center, radius - 40, fillBrush);
     canvas.drawCircle(center, radius - 40, outlineBrush);
 
     var secHandX = centerX + 80 * cos(dateTime.second * 6 * pi / 180);
     var secHandY = centerX + 80 * sin(dateTime.second * 6 * pi / 180);
     canvas.drawLine(center, Offset(secHandX, secHandY), secHandBrush);
-
+    
     var minHandX = centerX + 80 * cos(dateTime.minute * 6 * pi / 180);
     var minHandY = centerX + 80 * sin(dateTime.minute * 6 * pi / 180);
     canvas.drawLine(center, Offset(minHandX, minHandY), minHandBrush);
-
-    var hourHandX = centerX +
-        80 * cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
-    var hourHandY = centerX +
-        80 * sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+    
+    var hourHandX = centerX + 80 * cos((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
+    var hourHandY = centerX + 80 * sin((dateTime.hour * 30 + dateTime.minute * 0.5) * pi / 180);
     canvas.drawLine(center, Offset(hourHandX, hourHandY), hourHandBrush);
-
+    
     canvas.drawCircle(center, 16, centerFillBrush);
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
+  bool shouldRepaint(CustomPainter oldDelegate){
+
     return true;
   }
 }
