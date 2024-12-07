@@ -13,7 +13,7 @@ class _HomePageState extends State<Homepage> {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        color: Color(0xFF2D2F41),
+        color: const Color.fromARGB(255, 35, 53, 68),
         child: ClockView(),
       ),
     );

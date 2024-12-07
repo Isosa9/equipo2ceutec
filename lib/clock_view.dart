@@ -29,22 +29,41 @@ class ClockPainter extends CustomPainter {
     var radius = min(centerX, centerY);
 
     var fillBrush = Paint()
-    ..color = Color(0xFF444974);
+    ..color = Colors.blueGrey;
 
     var outlineBrush = Paint()
-    ..color = Color(0xFFEAECFF)
+    ..color = Colors.white
     ..style = PaintingStyle.stroke
     ..strokeWidth = 16;
 
-    var centerFillBrush = Paint()..color = Color(0xFFEAECFF);
+    var centerFillBrush = Paint()..color = Colors.white;
 
     var secHandBrush = Paint()
-    ..color = Color(0xFFEAECFF)
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = 16;
+      ..color = Colors.orange
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 8;
+
+    var minHandBrush = Paint()
+      ..shader = RadialGradient(colors: [Colors.lightBlue, Colors.pink])
+          .createShader(Rect.fromCircle(center: center, radius: radius))
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 16;
+
+    var hourHandBrush = Paint()
+      ..shader = RadialGradient(colors: [Colors.lightBlue, Colors.pink])
+          .createShader(Rect.fromCircle(center: center, radius: radius))
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 16;
+
 
     canvas.drawCircle(center, radius - 40, fillBrush);
     canvas.drawCircle(center, radius - 40, outlineBrush);
+    canvas.drawLine(center, Offset(100,100), secHandBrush);
+    canvas.drawLine(center, Offset(150,100), minHandBrush);
+    canvas.drawLine(center, Offset(200,150), hourHandBrush);
     canvas.drawCircle(center, 16, centerFillBrush);
   }
 
