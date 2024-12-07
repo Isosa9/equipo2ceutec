@@ -10,12 +10,42 @@ class Homepage extends StatefulWidget {
 class _HomePageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
+      backgroundColor: Color(0xFF2DF41),
       body: Container(
+        padding: EdgeInsets.all(32),
         alignment: Alignment.center,
-        color: Color(0xFF2D2F41),
-        child: ClockView(),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              'Clock',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+            SizedBox(height: 32),
+            Text(
+              'Clock',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+            Text(
+              'Clock',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+            ClockView(),
+            Text(
+              'Tinezone',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.language,
+                  color: Colors.white,
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
