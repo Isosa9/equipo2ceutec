@@ -24,6 +24,10 @@ class _HomePageState extends State<Homepage> {
       body: Row(
         children: <Widget>[
           Column(
+            VerticalDivider(
+              color: Colors.white54,
+              width: 1,
+            ),
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextButton(
@@ -40,44 +44,46 @@ class _HomePageState extends State<Homepage> {
               ),
             ],
           ),
-          Container(
-            padding: EdgeInsets.all(32),
-            alignment: Alignment.center,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'Clock',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
-                ),
-                SizedBox(height: 32),
-                Text(
-                  'Clock',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
-                ),
-                Text(
-                  formattedDate,
-                  style: TextStyle(color: Colors.white, fontSize: 24),
-                ),
-                ClockView(),
-                Text(
-                  'Tinezone',
-                  style: TextStyle(color: Colors.white, fontSize: 24),
-                ),
-                SizedBox(height: 16),
-                Row(
-                  children: <Widget>[
-                    Icon(
-                      Icons.language,
-                      color: Colors.white,
-                    ),
-                    Text(
-                      'UTC' + offsetSign + timezoneString,
-                      style: TextStyle(color: Colors.white, fontSize: 24),
-                    ),
-                  ],
-                )
-              ],
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 3, vertical: 64),
+              alignment: Alignment.center,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Clock',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                  SizedBox(height: 32),
+                  Text(
+                    'Clock',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                  Text(
+                    formattedDate,
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                  ClockView(),
+                  Text(
+                    'Tinezone',
+                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+                  SizedBox(height: 16),
+                  Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.language,
+                        color: Colors.white,
+                      ),
+                      Text(
+                        'UTC' + offsetSign + timezoneString,
+                        style: TextStyle(color: Colors.white, fontSize: 24),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ],
