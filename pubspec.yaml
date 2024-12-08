@@ -20,7 +20,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/fonts/clock.jpeg
-    - assets/fonts/alarm.jpg
+    - assets/clock.png
+    - assets/alarm.png
 
   
