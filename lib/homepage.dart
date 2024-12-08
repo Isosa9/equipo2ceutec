@@ -20,86 +20,54 @@ class _HomePageState extends State<Homepage> {
     print(timezoneString);
 
     return Scaffold(
-      backgroundColor: Color(0xFF2DF41),
+      backgroundColor: const Color.fromARGB(255, 43, 40, 14),
       body: Row(
         children: <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              builMenuButton('clock', 'assets/clock.png'),
-              builMenuButton('Alarm', 'assets/alarm.png'),
-            ],
-          ),
+              children: <Widget>[
+                FlatButton(
+                onPressed: (){},
+                child: Column(
+                  children: <Widget>[
+                    FlutterLogo(),
+                    Text(
+                      'Clock',
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  ],
+                ),
+              ),
+            ]
+          )
+          VerticalDivider(
+            color: Colors.white54,
+            width: 1,
+            ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 3, vertical: 64),
-              alignment: Alignment.center,
+              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 64)
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Flexible(
-                    flex: 1,
-                    fit: FlexFit.tight,
-                    child: Text(
+                  Text(
                     'Clock',
                     style: TextStyle(color: Colors.white, fontSize: 24),
-                    
                   ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                         Text(
-                    formattedTime,
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
-                    ],
-                  ),
-                  ),
-            
-                  Flexible(
-                    flex: 5,
-                    fit: FlexFit.tight,
-                    child: Align(
-                      alignment: Alignment.center, 
-                    child: ClockView(size: MediaQuery.of(context). size.height /4 )),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    fit: FlexFit.tight,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                    children:<Widget> [
-                      Text(
-                        'Tinezone',
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      ),
-                    ],
-                  ),
-                  ),
-                  SizedBox(height: 16),
-                  Row(
-                    children: <Widget>[
-                      Icon(
-                        Icons.language,
-                        color: Colors.white,
-                      ),
-                      Text(
-                        'UTC' + offsetSign + timezoneString,
-                        style: TextStyle(color: Colors.white, fontSize: 24),
-                      ),
-                    ],
+                  SizedBox(height: 32),
+                  Text(
+                    formattedTime
                   )
                 ],
               ),
             ),
-          ),
-        ],
+          )
+        ]
       ),
     );
   }
+}
+   
 
   Padding builMenuButton(String title, String image) {
     return Padding(
