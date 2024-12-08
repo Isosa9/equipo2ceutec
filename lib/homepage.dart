@@ -26,8 +26,8 @@ class _HomePageState extends State<Homepage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              builMenuButton('clock', 'assets/clock.jpeg'),
-              builMenuButton('Alarm', 'assets/alarm.jpg'),
+              builMenuButton('clock', 'assets/clock.png'),
+              builMenuButton('Alarm', 'assets/alarm.png'),
             ],
           ),
           Expanded(
