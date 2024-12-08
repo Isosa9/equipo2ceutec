@@ -26,7 +26,8 @@ class _HomePageState extends State<Homepage> {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              builMenuButton(),
+              builMenuButton('clock', 'assets/clock.jpeg'),
+              builMenuButton('Alarm', 'assets/alarm.jpg'),
             ],
           ),
           Expanded(
@@ -36,9 +37,12 @@ class _HomePageState extends State<Homepage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text(
+                  Flexible(
+                    flex: 1,
+                    child: Text(
                     'Clock',
                     style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
                   ),
                   SizedBox(height: 32),
                   Text(
@@ -76,19 +80,36 @@ class _HomePageState extends State<Homepage> {
     );
   }
 
-  TextButton builMenuButton() {
-    return TextButton(
-      onPressed: () {},
-      child: Column(
-        children: <Widget>[
-          Image.asset('assets/clock.png'),
-          SizedBox(height: 16),
-          Text(
-            'Clock',
-            style: TextStyle(color: Colors.white, fontSize: 14),
+  Padding builMenuButton(String title, String image) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 16.0)
+          child: TextButton(
+            onPressed: () {},
+            child: Column(
+           children:<Widget> [
+
+           Image.asset(image),
+            SizedBox(height: 16),
+            Text(
+              title??'' ,
+              style: TextStyle(color: Colors.white, fontSize: 14),
+            
+            ),
+             ],
+            ), 
           ),
-        ],
-      ),
     );
+  } 
+
+  
+
+            
+          
+          
+          
+         
+        
+      
+  
   }
 }
