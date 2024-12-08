@@ -7,9 +7,9 @@ environment:
   sdk: ^3.5.3
 
 dependencies:
+  intl: ^0.18.0
   flutter:
     sdk: flutter
-  intl: ^0.18.0
 
 dev_dependencies:
   flutter_test:
@@ -22,5 +22,5 @@ flutter:
   assets:
     - assets/clock.png
     - assets/alarm.png
-
-  
+    - assets/Stopwatch.png
+    - assets/timer.png  
