@@ -39,24 +39,45 @@ class _HomePageState extends State<Homepage> {
                 children: <Widget>[
                   Flexible(
                     flex: 1,
+                    fit: FlexFit.tight,
                     child: Text(
                     'Clock',
                     style: TextStyle(color: Colors.white, fontSize: 24),
+                    
                   ),
                   ),
-                  SizedBox(height: 32),
-                  Text(
-                    'Clock',
-                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  Flexible(
+                    flex: 2,
+                    child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                         Text(
+                    formattedTime,
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                  Text(
-                    formattedDate,
-                    style: TextStyle(color: Colors.white, fontSize: 24),
+                    ],
                   ),
-                  ClockView(),
-                  Text(
-                    'Tinezone',
-                    style: TextStyle(color: Colors.white, fontSize: 24),
+                  ),
+            
+                  Flexible(
+                    flex: 5,
+                    fit: FlexFit.tight,
+                    child: Align(
+                      alignment: Alignment.center, 
+                    child: ClockView(size: MediaQuery.of(context). size.height /4 )),
+                  ),
+                  Flexible(
+                    flex: 2,
+                    fit: FlexFit.tight,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                    children:<Widget> [
+                      Text(
+                        'Tinezone',
+                        style: TextStyle(color: Colors.white, fontSize: 24),
+                      ),
+                    ],
+                  ),
                   ),
                   SizedBox(height: 16),
                   Row(
@@ -91,7 +112,7 @@ class _HomePageState extends State<Homepage> {
            Image.asset(image),
             SizedBox(height: 16),
             Text(
-              title??'' ,
+              title ??'' ,
               style: TextStyle(color: Colors.white, fontSize: 14),
             
             ),
