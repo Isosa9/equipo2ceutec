@@ -1,4 +1,4 @@
-import 'package:flutter_alarm_clock/app/data/models/alarm_info.dart';
+import 'package:flutter_proyectofinal_app/app/data/models/alarm_info.dart';
 import 'package:sqflite/sqflite.dart';
 
 final String tableAlarm = 'alarm';
