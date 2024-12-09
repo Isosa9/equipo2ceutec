@@ -13,6 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_local_notifications: ^9.5.3+1flu
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
