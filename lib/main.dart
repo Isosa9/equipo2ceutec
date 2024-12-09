@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_proyectofinal_app/homepage.dart';
+import 'package:flutter_proyectofinal_app/app/views/homepage.dart';
 
 void main() {
   runApp(MainApp());
@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Homepage(),
+      home: HomePage(),
     );
   }
 }
