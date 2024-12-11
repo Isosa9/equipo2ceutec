@@ -7,12 +7,13 @@ environment:
   sdk: ^3.5.3
 
 dependencies:
+
   provider: ^6.1.2
   cupertino_icons: ^1.0.2
   intl: ^0.20.1
   flutter:
     sdk: flutter
-
+   
   flutter_local_notifications: ^18.0.1
   dotted_border: ^2.0.0+2
   sqflite: ^2.4.1
